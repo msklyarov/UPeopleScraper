@@ -3,7 +3,6 @@ var dataJson = {
   records: []
 };
 
-
 $('article.row').each(function() {
   var data = $(this).children('.col-md-9');
   var nameAndUrl = data.children('.m-0-top-bottom.display-inline-block').children('a');
@@ -14,7 +13,7 @@ $('article.row').each(function() {
       name: nameAndUrl.text().trim(),
       title: data.children('.m-0-top-bottom').children('div').children('.ellipsis').text().trim(),
       profileUrl: nameAndUrl.prop('href'),
-      photoUrl: $(this).children('.col-md-1').children('.row').children('.col-md-10').children('div').children('div').children('a').prop('href'),
+      photoUrl: $(this).children('.col-md-1').children('.row').children('.col-md-10').children('div').children('div').children('a').children('img').prop('src'),
       rate: rateAndEarned.children('strong').text(),
       totalEarned: rateAndEarned.children('span').children('strong').text()
     };
@@ -22,7 +21,7 @@ $('article.row').each(function() {
     dataJson.records.push(jsonRow);
 
     console.log(nameAndUrl.text().trim(), ';', nameAndUrl.prop('href'), ';',
-      $(this).children('.col-md-1').children('.row').children('.col-md-10').children('div').children('div').children('a').prop('href'), ';',
+      $(this).children('.col-md-1').children('.row').children('.col-md-10').children('div').children('div').children('a').children('img').prop('src'), ';',
       data.children('.m-0-top-bottom').children('div').children('.ellipsis').text().trim(), ';',
       rateAndEarned.children('strong').text(), ';',
       rateAndEarned.children('span').children('strong').text());
